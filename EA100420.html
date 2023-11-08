@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        body.dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+
+        body.light-mode {
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        h1 {
+            color: #fff;
+        }
+
+        h1.dark-mode {
+            color: #fff;
+        }
+
+        h1.light-mode {
+            color: #000;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table, th, td {
+            border: 1px solid #000;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            background: transparent;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .toggle-button {
+            background-color: #fff;
+            color: #333;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        .toggle-button.dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .toggle-button.light-mode {
+            background-color: #fff;
+            color: #333;
+        }
+        
+        .logo {
+            width: 100%;
+            max-width: 400px; /* Ajusta el tamaño máximo del logotipo según tus necesidades */
+            margin: 20px auto; /* Centra el logotipo horizontalmente */
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <img class="logo" src="https://www.idc-latinamerica.com/sites/default/files/2021-07/UFG%20Logo.png" alt="Logo de la Universidad">
+    <h1 class="dark-mode">Integrantes del Grupo</h1>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Carnet</th>
+        </tr>
+        <tr>
+            <td>Wilber Ernesto Elías Avalos</td>
+            <td>EA100420</td>
+        </tr>
+        <tr>
+            <td>Jennifer Elizabeth Gómez Bonilla</td>
+            <td>GB100419</td>
+        </tr>
+        <tr>
+            <td>Álvaro Israel Barahona Hernández</td>
+            <td>BH100320</td>
+        </tr>
+        <tr>
+            <td>Ingrid Marjorie Hernández Barahona</td>
+            <td>HB100220</td>
+        </tr>
+    </table>
+    <button class="toggle-button dark-mode" onclick="toggleDarkMode()">Cambiar a Modo Claro</button>
+    <button class="toggle-button light-mode" onclick="toggleLightMode()">Cambiar a Modo Oscuro</button>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.remove('dark-mode');
+            document.body.classList.add('light-mode');
+            document.querySelector('h1').classList.add('light-mode');
+        }
+
+        function toggleLightMode() {
+            document.body.classList.remove('light-mode');
+            document.body.classList.add('dark-mode');
+            document.querySelector('h1').classList.remove('light-mode');
+        }
+    </script>
+</body>
+</html>
